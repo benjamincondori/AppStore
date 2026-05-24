@@ -17,4 +17,4 @@ steps:
 
 # Compilar solución completa
 - script: dotnet build AppStoreSolution.sln --configuration Release
-  displayName: 'Compilar solución'
+  displayName: 'Compilar Solución'
