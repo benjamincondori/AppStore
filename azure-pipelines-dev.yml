@@ -1,0 +1,20 @@
+trigger:
+- benjamin-dev
+
+pool:
+  name: Default   
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '9.0.x'
+    includePreviewVersions: true
+
+# Restaurar dependencias
+- script: dotnet restore AppStoreSolution.sln
+  displayName: 'Restaurar dependencias'
+
+# Compilar solución completa
+- script: dotnet build AppStoreSolution.sln --configuration Release
+  displayName: 'Compilar solución'
